@@ -1,0 +1,24 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: eureka-registry-server
+eureka:
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 30000
+    peer-node-read-timeout-ms: 300000
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    region: sit
+    service-url.zone1: http://localhost:9002/eureka
+    service-url.zone2: http://localhost:9003/eureka
+    availability-zones.sit: zone1,zone2
+  instance:
+    hostname: localhost
+    metadataMap.zone: zone1
+    lease-expiration-duration-in-seconds: 30
+  environment: SIT
+  datacenter: sboot
+logging.level.org.springframework.web: DEBUG
