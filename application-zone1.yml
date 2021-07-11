@@ -18,7 +18,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     region: sit
-    service-url.zone1: http://localhost:9002/eureka
+    service-url.zone1: http://localhost:9022/eureka
     service-url.zone2: http://localhost:9003/eureka
     availability-zones.sit: zone1,zone2
   instance:
