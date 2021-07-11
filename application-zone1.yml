@@ -5,7 +5,7 @@ spring:
     name: eureka-registry-server
   boot:
     admin:
-      url: http://localhost:8080
+      url: http://localhost:9090
     username: admin
     password: admin
 
