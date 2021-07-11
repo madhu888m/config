@@ -3,9 +3,9 @@ server:
 spring:
   application:
     name: eureka-registry-server
-    boot:
-      admin:
-        url: http://localhost:9090
+  boot:
+    admin:
+      url: http://localhost:9090
 
 eureka:
   server:
