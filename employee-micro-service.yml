@@ -1,0 +1,47 @@
+eureka:
+  client: 
+    register-with-eureka: true
+    fetch-registry: true
+    region: sit
+    service-url.zone1: http://localhost:9022/eureka
+    service-url.zone2: http://localhost:9003/eureka
+    availability-zones.sit: zone1,zone2
+hibernate:
+    hbm2ddl:
+        auto: create-drop
+organization:
+    service:
+        base:
+            url: http://organization-service/api/organizations/
+        name: organization-service
+security:
+    oauth2:
+        resource:
+            user-info-uri: http://oauth2-authentication-service:8060/oauth/user
+spring:
+    cloud:
+        config:
+            uri: http://configservice:8888
+    datasource:
+        password: hrms
+        testWhileIdle: true
+        url: jdbc:postgresql://db:5432/employee_service
+        username: hrms
+        validationQuery: SELECT 1
+    h2:
+        console:
+            enabled: true
+    jpa:
+        hibernate:
+            ddl-auto: update
+            naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                jdbc:
+                    lob:
+                        non_contextual_creation: true
+        show-sql: true
+    liquibase:
+        change-log: classpath:db/master/master.xml
+        enabled: true
